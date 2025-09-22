@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Predictive Maintenance of Jet Engines (NASA CMAPSS - FD001)
 
 This project uses NASA's C-MAPSS dataset (FD001) to predict the **Remaining Useful Life (RUL)** of jet engines using Gradient Boosting.  
@@ -69,4 +68,3 @@ Install dependencies with:
 =======
 # Predictive-project-on-NASA-dataset
 Predictive Maintenance of Jet Engines Using RUL Estimation on NASA’s FD001 Dataset.
->>>>>>> c1ad064a25b66e04d57384c2f958dc4afabd233e
