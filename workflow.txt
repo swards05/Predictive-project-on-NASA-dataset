@@ -1,0 +1,95 @@
+Project Workflow Topics
+
+Project Setup
+
+Folder structure, libraries, requirements.
+
+Data Loading
+
+Load train_FD001.txt, test_FD001.txt, RUL_FD001.txt.
+
+Assign column names (engine_id, cycle, settings, sensors).
+
+Data Exploration
+
+Head, shape, missing values.
+
+Plots: sensor trends, correlation heatmap, RUL histogram.
+
+Data Preprocessing
+
+Compute RUL for train & test.
+
+Drop constant sensors.
+
+Feature Engineering
+
+Add derived features (rate of change, rolling mean/std, etc.).
+
+Windowing (optional, if you want sequence features).
+
+Scaling
+
+Apply StandardScaler / MinMaxScaler.
+
+Train/Test Split
+
+Split by engine IDs (avoid leakage).
+
+Model Training
+
+GradientBoostingRegressor (baseline).
+
+Optionally compare with XGBoost/LightGBM.
+
+Hyperparameter Tuning
+
+GridSearchCV or Optuna.
+
+Evaluation Metrics
+
+RMSE, MAE, R².
+
+Compare predicted RUL vs true RUL plots.
+
+Alert System
+
+Define threshold (e.g., RUL ≤ 30 → Alert).
+
+Generate alerts per engine.
+
+Data Visualization
+
+Predicted vs true RUL.
+
+Engine health timeline with alert flags.
+
+Feature importance plot.
+
+Model Interpretation
+
+Which sensors/settings are most important?
+
+Deployment & GitHub Structure
+
+Save models, outputs, visualizations.
+
+Organize into src/, data/, notebooks/.
+
+README Documentation
+
+Dataset description, methodology, results, visualizations.
+
+Extensions (optional)
+
+Classification (Fail soon/Not fail soon).
+
+Deep learning (LSTM/GRU).
+
+Experiment Tracking (optional)
+
+Track results with MLflow or just a CSV log.
+
+Reproducibility
+
+Fix random seeds, export requirements.txt.
