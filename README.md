@@ -1,17 +1,12 @@
-# Predictive Maintenance of Jet Engines (NASA CMAPSS - FD001)
+=======
+# Predictive-project-on-NASA-dataset
+Predictive Maintenance of Jet Engines Using RUL Estimation on NASA’s FD001 Dataset.
+=======
+# 🚀 Jet Engine RUL Predictor (FD001)
 
-This project uses NASA's C-MAPSS dataset (FD001) to predict the **Remaining Useful Life (RUL)** of jet engines using Gradient Boosting.  
-An **alert system** is implemented to flag engines that are close to failure.
+This project predicts the **Remaining Useful Life (RUL)** of jet engines using the NASA FD001 dataset. The app provides real-time predictions and categorizes engine health into **HEALTHY, WARNING, or CRITICAL**, helping with proactive maintenance decisions.
 
-## Project Workflow
-1. Data Loading
-2. Data Exploration & Visualization
-3. Preprocessing & Feature Engineering
-4. Model Training (Gradient Boosting)
-5. Evaluation
-6. Maintenance Alert System
-7. Results & Visualizations
-
+---
 ## Dataset
 The FD001 dataset contains multiple engines run until failure. Each record has:
 - Engine ID
@@ -19,52 +14,81 @@ The FD001 dataset contains multiple engines run until failure. Each record has:
 - Operational settings (3 features)
 - 21 sensor measurements
 - Remaining Useful Life (RUL, computed)
+## **Features**
 
-## Requirements
-Install dependencies with:
-        **pip install -r requirements.txt**
+- Predict RUL from operational settings and sensor readings
+- Color-coded health status:
+  - 🟢 HEALTHY
+  - 🟠 WARNING
+  - 🔴 CRITICAL
+- Logs predictions in a CSV for monitoring
+- Displays recent predictions in the app
+- Gradient Boosting Regressor used for modeling
+- Feature engineering includes selection and rolling statistics for sensor data
+
+---
+
+## **Project Structure**
+
+├── app.py # Streamlit web app
+├── src/
+│ ├── config.py # Paths and constants
+│ ├── preprocessing.py # Data loading and preprocessing
+│ ├── feature_engineering.py # Feature selection and rolling stats
+│ ├── model_training.py # Train base and full models
+├── outputs/
+│ ├── models/ # Saved models
+│ ├── predictions_log.csv # Prediction history
+├── data/ # Dataset files (train/test)
+├── requirements.txt # Python dependencies
+└── README.md
 
 
+---
 
-## step1: (data_loading)
-        Assigns column names (engine ID, cycle, 3 settings, 21 sensors).
-        Loads train, test, and RUL files.
-        Cleans any extra empty columns.
-        Prints dataset shapes and previews.
+## **Installation**
 
-## step2:(eda_fd001)
-        Preview dataset → first rows, summary, null values.
-        Sensor values over time → check degradation trends.
-        Correlation heatmap → see which sensors carry useful info.
-        RUL distribution (for train).
-        Example engine plot → show how RUL decreases with cycles.
+1. Clone the repository:
 
-## step3:(preprocessing)
-        Compute RUL for training set.
-        Compute RUL for test set using provided RUL_FD001.txt.
-        Cap RUL (so outliers don’t dominate training).
-        Drop constant/unused sensors.
-        Apply scaling.
-        Return cleaned train/test datasets.
+```bash
+git clone https://github.com/yourusername/jet-engine-rul.git
+cd jet-engine-rul
+```
+2. Create a virtual environment (optional but recommended):
 
-## step4:(feature_engineering)
-        Drops useless sensors
-        Keeps op_settings + useful sensors.
-        Adds rolling statistics (mean & std over window sizes, e.g., 5, 10, 20 cycles).
-        Still outputs X_train, y_train, X_test, y_test cleanly.
+```bash 
+python -m venv venv
+source venv/bin/activate   # Linux/macOS
+venv\Scripts\activate      # Windows
+```
+3. Install dependencies:
 
-## step5: (model_training)
-        Responsible for training the models and saving them.
+```bash
+pip install -r requirements.txt
+```
 
-## step6: (evaluation)
-        Handles metrics and visualization.
-        
-## step7: (main)
-        Load data
-        Preprocess + Feature engineering
-        Train the model (or load if already saved)
-        Evaluate performance
-        I also added saving/loading with joblib so you don’t need to retrain every time.
-=======
-# Predictive-project-on-NASA-dataset
-Predictive Maintenance of Jet Engines Using RUL Estimation on NASA’s FD001 Dataset.
+## Usage
+
+1. Train models (optional if models are already saved):
+```bash
+python -m src.model_training
+```
+
+2. Run the Streamlit app:
+```bash
+streamlit run app.py
+```
+
+3. Open the web app in your browser (usually at http://localhost:8501).
+
+4. Enter the operational settings and sensor readings to get the predicted RUL and engine health category.
+
+## Dependencies
+
+All dependencies are listed in **requirements.txt.**
+
+## Author
+
+**Swathi D**
+Project for predictive maintenance and RUL prediction of jet engines.
+>>>>>>> f52e19c (Update app.py, add README, requirements, update outputs and models)

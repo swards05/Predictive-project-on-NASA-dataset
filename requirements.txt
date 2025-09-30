@@ -1,6 +1,13 @@
-pandas
-numpy
-matplotlib
-seaborn
-scikit-learn
-xgboost
+
+---
+
+### **requirements.txt**
+
+```text
+streamlit==1.30.0
+pandas==2.1.1
+numpy==1.27.0
+scikit-learn==1.3.0
+joblib==1.3.2
+matplotlib==3.8.0
+seaborn==0.12.2
