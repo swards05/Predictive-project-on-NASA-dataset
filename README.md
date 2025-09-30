@@ -29,7 +29,7 @@ The FD001 dataset contains multiple engines run until failure. Each record has:
 ---
 
 ## **Project Structure**
-
+```
 ├── app.py                     # Streamlit web app
 ├── src/
 │   ├── config.py              # Paths and constants
@@ -42,7 +42,7 @@ The FD001 dataset contains multiple engines run until failure. Each record has:
 ├── data/                      # Dataset files (train/test)
 ├── requirements.txt           # Python dependencies
 └── README.md
-
+```
 
 ---
 
