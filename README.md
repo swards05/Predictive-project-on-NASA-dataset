@@ -30,17 +30,17 @@ The FD001 dataset contains multiple engines run until failure. Each record has:
 
 ## **Project Structure**
 
-├── app.py # Streamlit web app
+├── app.py                     # Streamlit web app
 ├── src/
-│ ├── config.py # Paths and constants
-│ ├── preprocessing.py # Data loading and preprocessing
-│ ├── feature_engineering.py # Feature selection and rolling stats
-│ ├── model_training.py # Train base and full models
+│   ├── config.py              # Paths and constants
+│   ├── preprocessing.py       # Data loading and preprocessing
+│   ├── feature_engineering.py # Feature selection and rolling stats
+│   └── model_training.py      # Train base and full models
 ├── outputs/
-│ ├── models/ # Saved models
-│ ├── predictions_log.csv # Prediction history
-├── data/ # Dataset files (train/test)
-├── requirements.txt # Python dependencies
+│   ├── models/                # Saved models
+│   └── predictions_log.csv    # Prediction history
+├── data/                      # Dataset files (train/test)
+├── requirements.txt           # Python dependencies
 └── README.md
 
 
@@ -91,4 +91,3 @@ All dependencies are listed in **requirements.txt.**
 
 **Swathi D**
 Project for predictive maintenance and RUL prediction of jet engines.
->>>>>>> f52e19c (Update app.py, add README, requirements, update outputs and models)
